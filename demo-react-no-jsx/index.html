@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo React No Jsx</title>
+</head>
+<body>
+  <h1>Demo React No Jsx</h1>
+  <div id="app"></div>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <script src="counter.js"></script>
+  <script>
+    const e = React.createElement;
+    const app = document.getElementById("app");
+    const root = document.getElementById("root");
+    const item = e("li", {}, "Elément de liste");
+    const list = e("ul", {className: "class1 class2"}, item);
+    
+    ReactDOM.render(list, app);
+    ReactDOM.render(e(Counter, null, null), root);
+
+  </script>
+</body>
+</html>
