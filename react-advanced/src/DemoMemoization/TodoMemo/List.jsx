@@ -1,19 +1,22 @@
-import { useEffect } from "react"
+import { useEffect, memo } from "react"
 import Task from "./Task"
 
-const List = ({ todoList }) => {
+const List = ({ todoList, onSignal }) => {
 
   useEffect(() => {
     console.log("Rendering <List />...")
   })
 
   return (
-    <ul>
-      { todoList.map(todo => (
-        <Task key={todo.id} task={todo.task} />
-      ))  }
-    </ul>
+    <>
+      <ul>
+        { todoList.map(todo => (
+          <Task key={todo.id} task={todo.task} />
+        ))  }
+      </ul>
+      <button onClick={onSignal}>Update parent</button>
+    </>
   )
 }
 
-export default List
+export default memo(List)

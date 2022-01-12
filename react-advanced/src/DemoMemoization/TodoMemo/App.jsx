@@ -30,35 +30,31 @@ const App = () => {
     setSearch(task)
   }
 
-  // const filteredTodoList = todoList.filter(todo => {
-  //   console.log("Filter callback")
-  //   return todo.task.includes(search) 
-  // })
+  const handleInput = e => {
+    setTask(e.target.value)
+  }
 
+  const handleChildSignal = useCallback(() => {
+    setTask((t) => t + "child")
+  }, [])
+  
+  // (ré)exécuté que si search ou todoList changent
   const filteredTodoList = useMemo(() => 
     todoList.filter(todo => {
       console.log("Filter callback")
       return todo.task.includes(search) 
     }), [search, todoList])
 
-  const handleDelete = (todoId) => {
-    const newTodoList = todoList.filter(todo => todo.id !== todoId)
-    setTodoList(newTodoList)
-  }
-
   return (
     <>
       <input 
         type="text" 
         value={task} 
-        onChange={ e => setTask(e.target.value) } 
+        onChange={ handleInput } 
       />
       <button onClick={handleClick}>Ajouter</button>
       <button onClick={handleSearch}>Rechercher</button>
-
-      <button onClick={ () => handleDelete(1) }>Supprimer todo 1</button>
-
-      <List todoList={filteredTodoList} />
+      <List todoList={filteredTodoList} onSignal={handleChildSignal} />
     </>
   )
 }
