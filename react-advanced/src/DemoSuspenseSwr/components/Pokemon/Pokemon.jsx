@@ -6,8 +6,20 @@ const Pokemon = ({ pokemonName }) => {
 
   if (!data) return <div>Chargement...</div>
 
+  const { id, name, sprites, types } = data
+  const pokemonTypes = types.map(t => t.type.name)
+
   return (
-    <div>{ data.id }</div>
+    <>
+      <h2>{name}</h2>
+      <div>#{id}</div>
+
+      <img src={sprites.front_default} alt={name} />
+
+      { pokemonTypes.map(t => (
+        <p key={t}>{t}</p>
+      )) }
+    </>
   )
 
 }

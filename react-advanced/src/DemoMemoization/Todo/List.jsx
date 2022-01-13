@@ -8,7 +8,7 @@ const List = ({ todoList }) => {
   })
 
   return (
-    <ul>
+    <ul style={{listStyle: "none"}}>
       { todoList.map(todo => (
         <Task key={todo.id} task={todo.task} />
       ))  }

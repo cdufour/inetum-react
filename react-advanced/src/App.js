@@ -48,7 +48,7 @@ function App() {
   return (
     <div style={{ textAlign: "center" }}>
       <h1>React concepts avancés</h1>
-      
+ 
       <select onChange={handleChange}>
         <option value="void">Choix du composant à charger</option>
         { components.map((c, i) => (
