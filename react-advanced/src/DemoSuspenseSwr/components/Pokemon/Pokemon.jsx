@@ -1,4 +1,5 @@
 import useSWR from "swr"
+import { StyledCard, StyledHeader, StyledType, StyledTypes } from "./Pokemon.styled"
 
 const Pokemon = ({ pokemonName }) => {
 
@@ -10,16 +11,22 @@ const Pokemon = ({ pokemonName }) => {
   const pokemonTypes = types.map(t => t.type.name)
 
   return (
-    <>
-      <h2>{name}</h2>
-      <div>#{id}</div>
+    <StyledCard pokemonType={pokemonTypes[0]}>
+      <StyledHeader>
+        <h2>{name}</h2>
+        <div>#{id}</div>
+      </StyledHeader>
 
       <img src={sprites.front_default} alt={name} />
 
-      { pokemonTypes.map(t => (
-        <p key={t}>{t}</p>
-      )) }
-    </>
+      <StyledTypes>
+        { pokemonTypes.map(t => (
+          <StyledType key={t}>{t}</StyledType>
+        )) }
+      </StyledTypes>
+
+
+    </StyledCard>
   )
 
 }

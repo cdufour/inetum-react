@@ -11,6 +11,9 @@ import DemoContext from "./DemoContext/components";
 import DemoUseRef from "./DemoUseRef";
 import DemoUseReducer from "./DemoUseReducer";
 import DemoSuspenseSwr from "./DemoSuspenseSwr/components";
+import DemoLazyLoading from "./DemoLazyLoading";
+import DemoPortal from "./DemoPortal";
+import DemoTesting from "./DemoTesting/ShowInfo";
 
 const components = [
   { label: "Counter", component: <Counter /> },
@@ -24,6 +27,9 @@ const components = [
   { label: "DemoUseRef", component: <DemoUseRef /> },
   { label: "Hook useReducer", component: <DemoUseReducer /> },
   { label: "Suspense & Swr", component: <DemoSuspenseSwr /> },
+  { label: "Lazy Loading", component: <DemoLazyLoading /> },
+  { label: "Portal", component: <DemoPortal /> },
+  { label: "Testing", component: <DemoTesting /> },
 ]
 
 // composant racine
@@ -55,12 +61,12 @@ function App() {
           <option key={i} value={i}>{c.label}</option>
         )) }
       </select>
-
+      
       <div style={{marginTop: 20}}>
         <h2 style={{color: "#45aef5"}}>{ label }</h2>
         <div>{ component }</div>
       </div>
-    
+  
     </div>
   );
 }
