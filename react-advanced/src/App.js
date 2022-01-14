@@ -14,6 +14,8 @@ import DemoSuspenseSwr from "./DemoSuspenseSwr/components";
 import DemoLazyLoading from "./DemoLazyLoading";
 import DemoPortal from "./DemoPortal";
 import DemoTesting from "./DemoTesting/ShowInfo";
+import DemoAnimation from "./DemoAnimation/end/App";
+import DemoI18n from "./DemoI18n";
 
 const components = [
   { label: "Counter", component: <Counter /> },
@@ -30,6 +32,8 @@ const components = [
   { label: "Lazy Loading", component: <DemoLazyLoading /> },
   { label: "Portal", component: <DemoPortal /> },
   { label: "Testing", component: <DemoTesting /> },
+  { label: "Animation", component: <DemoAnimation /> },
+  { label: "Internationalization", component: <DemoI18n /> },
 ]
 
 // composant racine
