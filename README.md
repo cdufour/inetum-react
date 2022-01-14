@@ -2,7 +2,7 @@
 _Auteur: Christophe DUFOUR - opusidea@gmail.com_
 ```
 git clone https://github.com/cdufour/inetum-react.git
-cd thales-react-adv
+cd inetum-react
 ```
 
 ## Utilisation de React sans JSX
